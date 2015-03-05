@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package enums;
+package data;
 
 import java.util.HashMap;
 import java.util.Map;

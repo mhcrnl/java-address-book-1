@@ -1,150 +1,77 @@
 package contacts;
 
-import interfaces.Favorable;
-
 import java.time.LocalDate;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 public class Contact {
+
 	private String firstName;
 	private String lastName;
-	private int phone;
-	private boolean favorite;
-	private String email;
-	private String homepage;
+	private String nickName;
+	private String company;
 	private LocalDate birthday;
-	private ContactAddress data = new ContactAddress();
+	private String note;
+	private Set<ContactInfo> cInfo = new LinkedHashSet<ContactInfo>();
 
 	public String getFirstName() {
 		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
 	public String getLastName() {
 		return lastName;
 	}
 
-	public int getPhone() {
-		return phone;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
-	public boolean isFavorite() {
-		return favorite;
+	public String getNickName() {
+		return nickName;
 	}
 
-	public String getEmail() {
-		return email;
+	public void setNickName(String nickName) {
+		this.nickName = nickName;
 	}
 
-	public String getHomepage() {
-		return homepage;
+	public String getCompany() {
+		return company;
+	}
+
+	public void setCompany(String company) {
+		this.company = company;
 	}
 
 	public LocalDate getBirthday() {
 		return birthday;
 	}
 
-	public String getStreet() {
-		return data.getStreet();
+	public void setBirthday(LocalDate birthday) {
+		this.birthday = birthday;
 	}
 
-	public int getStreetNumber() {
-		return data.getStreetNumber();
+	public String getNote() {
+		return note;
 	}
 
-	public int getPostalCode() {
-		return data.getPostalCode();
+	public void setNote(String note) {
+		this.note = note;
 	}
 
-	public String getCity() {
-		return data.getCity();
-	}
-
-	public String getCountry() {
-		return data.getCountry();
+	public void setInfo(ContactInfo info) {
+		cInfo.add(info);
 	}
 
 	@Override
 	public String toString() {
 		return "Contact [firstName=" + firstName + ", lastName=" + lastName
-				+ ", phone=" + phone + ", favorite=" + favorite + ", email="
-				+ email + ", homepage=" + homepage + ", birthday=" + birthday
-				+ ", street=" + data.getStreet() + ", streetNumber=" + data.getStreetNumber()
-				+ ", postalCode=" + data.getPostalCode() + ", city=" + data.getCity()
-				+ ", country=" + data.getCountry() + "]";
+				+ ", nickName=" + nickName + ", company=" + company
+				+ ", birthday=" + birthday + ", note=" + note + ", info="
+				+ cInfo + "]";
 	}
 
-	private Contact (Builder build){
-		this.firstName = build.firstName;
-		this.lastName = build.lastName;
-		this.phone = build.phone;
-		this.favorite = build.favorite;
-		this.email = build.email;
-		this.homepage = build.homepage;
-		this.birthday = build.birthday;
-		this.data.setStreet(build.street);
-		this.data.setStreetNumber(build.streetNumber);
-		this.data.setPostalCode(build.postalCode);
-		this.data.setCity(build.city);
-		this.data.setCountry(build.country);
-	}
-	
-	public static class Builder implements Favorable{
-		
-		private String firstName;
-		private String lastName;
-		private int phone;
-		private boolean favorite;
-		private String email;
-		private String homepage;
-		private LocalDate birthday;
-		private String street;
-		private int streetNumber;
-		private int postalCode;
-		private String city;
-		private String country;
-		
-		public Builder(String firstName,int phone){
-			this.firstName = firstName;
-			this.phone = phone;
-
-		}
-		public Builder lastName(String lastName){
-			this.lastName = lastName;
-			return this;
-		}
-		public Builder email(String email){
-			this.email = email;
-			return this;
-		}
-		public Builder homepage(String homepage){
-			this.homepage = homepage;
-			return this;
-		}
-		public Builder birthday(LocalDate birthday){
-			this.birthday = birthday;
-			return this;
-		}
-		public Builder street(String street){
-			this.street = street;
-			return this;
-		}
-		public Builder streetNumber(int streetNumber){
-			this.streetNumber = streetNumber;
-			return this;
-		}
-		public Builder city(String city){
-			this.city = city;
-			return this;
-		}
-		public Builder country(String country){
-			this.country = country;
-			return this;
-		}
-		public Contact build(){
-			return new Contact(this);
-		}
-		public Builder favorite(boolean fav){
-			this.favorite = fav;
-			return this;
-		}
-	}
 }
