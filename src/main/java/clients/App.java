@@ -10,13 +10,13 @@ import data.PhoneType;
 public class App {
 
 	public static void main(String[] args) {
-		ContactInfo phoneMobile = new Phone().setPhone(PhoneType.MOBILE,"0886722221");
-		ContactInfo phoneHome = new Phone().setPhone(PhoneType.HOME,"032687593");
-		ContactInfo phoneWork = new Phone().setPhone(PhoneType.WORK, "0290312222");
-		ContactInfo homeAddress = new Address().setCity("Plovdiv").setCountry("Bulgaria");
+		ContactInfo phoneMobile = new Phone().setPhone(PhoneType.MOBILE,"12344567");
+		ContactInfo phoneHome = new Phone().setPhone(PhoneType.HOME,"12344567");
+		ContactInfo phoneWork = new Phone().setPhone(PhoneType.WORK, "12344567");
+		ContactInfo homeAddress = new Address().setCity("Boston").setCountry("United States");
 
-		ContactInfo email = new Email().setEmail("simeonoff@me.com");
-		ContactInfo email2 = new Email().setEmail("sim.simeonoff@gmail.com");
+		ContactInfo email = new Email().setEmail("simeonoff@xx.com");
+		ContactInfo email2 = new Email().setEmail("simsimeonoff@xx.com");
 		
 		Contact contact1 = new Contact();
 		contact1.setInfo(phoneHome);
